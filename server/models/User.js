@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
     phoneNumber: String,
     transactions: Array,
     role: {
-      type: string,
+      type: String,
       enum: ["user", "admin", "superadmin"],
       default: "admin",
     },
@@ -21,4 +21,5 @@ const UserSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserSchema);
+export default User;
